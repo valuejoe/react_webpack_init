@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -24,14 +24,9 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
       }
     ]
   },
-  mode: 'development',
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
